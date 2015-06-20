@@ -38,6 +38,10 @@ app.run(function($rootScope) {
 });
  
 app.config(['$routeProvider', function($routeProvider) {
+	$routeProvider.when('/', {
+        templateUrl: 'home.html',
+        controller: 'MainController'
+    })
     $routeProvider.when('/home', {
         templateUrl: 'home.html',
         controller: 'MainController'
