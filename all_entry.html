@@ -2,7 +2,7 @@
 	<h1>All Entry</h1>
 	{{message}}
 	
-	<div class="panel panel-default" ng-repeat="entry in entries | orderBy:'id':reverse">
+	<div class="panel panel-default" ng-repeat="entry in entries | orderBy:'id':true">
 	  <div class="panel-heading">
 		<h3 class="panel-title">{{entry.title}}
 			<a class="text-danger pull-right" ng-click="remove(entry)"><span class="glyphicon glyphicon-minus-sign"></span></a>
