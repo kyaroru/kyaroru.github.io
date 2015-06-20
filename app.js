@@ -42,23 +42,23 @@ app.run(function($rootScope) {
  
 app.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/', {
-        templateUrl: 'home.html',
+        templateUrl: '/views/home.html',
         controller: 'MainController'
     })
     $routeProvider.when('/home', {
-        templateUrl: 'home.html',
+        templateUrl: '/views/home.html',
         controller: 'MainController'
     })
 	$routeProvider.when('/all', {
-        templateUrl: 'all_entry.html',
+        templateUrl: '/views/all_entry.html',
         controller: 'AllEntryController'
     })
 	$routeProvider.when('/category', {
-        templateUrl: 'category.html',
+        templateUrl: '/views/category.html',
         controller: 'CategoryController'
     })
 	$routeProvider.when('/new', {
-        templateUrl: 'new_entry.html',
+        templateUrl: '/views/new_entry.html',
         controller: 'NewEntryController'
       })
 	 
