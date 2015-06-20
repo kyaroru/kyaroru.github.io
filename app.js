@@ -87,7 +87,7 @@ app.controller('NewEntryController', function($rootScope,$scope) {
  
 	$rootScope.newEntry = {};
 	$scope.addEntry = function() {
-		rootScope.entries.push($rootScope.newEntry);
+		$rootScope.entries.push($rootScope.newEntry);
 		$rootScope.newEntry = {};
 		alert('Success add new entry xDD');
 	};
