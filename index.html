@@ -1,7 +1,45 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>My index page xDDD</p>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>Diary</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular-route.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-app="diaryApp">
+	<nav class="navbar navbar-inverse navbar-fixed-static">
+	  <div class="container">
+		<div class="navbar-header">
+		 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <a class="navbar-brand" href="#/new">
+			<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+		  </a>
+		</div>
+		
+		<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li ng-repeat="menu in menus" ng-class="{'active': selectedMenu == menu.id}">
+						<a href="{{menu.link}}">{{menu.name}}</a>
+					</li>
+				</ul>
+			</div>
+	  </div>
+	</nav>
+	
+	
+	<div ng-view=""></div>
+</div>
+
+	
+	<script src="http://dna.jsstatic.com/js/jquery.js"></script>
+	<script src="http://dna.jsstatic.com/js/bootstrap.js"></script>
 </body>
 </html>
