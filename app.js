@@ -89,7 +89,7 @@ app.controller('NewEntryController', function($rootScope,$scope) {
 	$scope.addEntry = function() {
 		rootScope.entries.push($rootScope.newEntry);
 		$rootScope.newEntry = {};
-		alert('success');
+		alert('Success add new entry xDD');
 	};
 });
 

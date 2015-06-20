@@ -2,7 +2,7 @@
 	<h1>New Entry xD</h1>
 	{{message}}
 	
-	<form name="addNewEntry" class="form" ng-submit="main.addEntry()">
+	<form name="addNewEntry" class="form">
 		<div class="form-group">
 			<div class="col-xs-12 col-sm-2"><label>Title</label></div>
 			<div class="col-xs-12 col-sm-10"><input type="text" class="form-control" ng-model="newEntry.title" required /></div>
@@ -14,7 +14,7 @@
 		</div>
 		<div class="clearfix"></div><br>
 		<div class="form-group col-xs-12">
-			<button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Add</button>
+			<button class="btn btn-success pull-right" ng-click="addEntry()"><span class="glyphicon glyphicon-plus-sign"></span> Add</button>
 		</div>
 	</form>
 </div>
