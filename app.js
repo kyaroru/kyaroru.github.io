@@ -64,7 +64,7 @@ app.config(['$routeProvider', function($routeProvider) {
  
 app.controller('MainController', function($rootScope,$scope) {
     $rootScope.selectedMenu = 0;
-    $scope.message = 'A diary app written in AngularJS which is simple, quick and responsive.. xD';
+    $scope.message = 'A blog written in AngularJS which is simple, quick and responsive.. xD';
      
 }); 
  
