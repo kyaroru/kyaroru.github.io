@@ -1,2 +1,3 @@
-# kyaroru.github.io
-my little blog xD
+Little Blog
+==============
+Welcome to my little blog xD
