@@ -23,14 +23,17 @@ app.run(function($rootScope) {
 	
 	$rootScope.entries = [
 		{	
+			id:1,
 			title:'Sad day',
 			content:'Donno why so sad ~ haiz...'
 		},
 		{
+			id:2,
 			title:'Sicked',
 			content:'Donno why sicked...TT'
 		},
 		{
+			id:3,
 			title:'Tired ~',
 			content:'Why everyday so tired ? LOL '
 		}
@@ -91,7 +94,7 @@ app.controller('NewEntryController', function($rootScope,$scope,$location) {
  
 	$rootScope.newEntry = {};
 	$scope.addEntry = function() {
-		
+		$rootScope.newEntry.id = $rootScope.entries.length+1;
 		$rootScope.entries.push($rootScope.newEntry);
 		$rootScope.newEntry = {};
 		alert('Success add new entry ! Redirecting to All Entry Page...');
