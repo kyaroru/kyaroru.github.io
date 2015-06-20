@@ -81,7 +81,7 @@ app.controller('AllEntryController', function($rootScope,$scope) {
      
 });
  
-app.controller('NewEntryController', function($rootScope,$scope) {
+app.controller('NewEntryController', function($rootScope,$scope,$location) {
 	$rootScope.selectedMenu = 3;
     $scope.message = 'This is new entry screen';
  
@@ -89,7 +89,8 @@ app.controller('NewEntryController', function($rootScope,$scope) {
 	$scope.addEntry = function() {
 		$rootScope.entries.push($rootScope.newEntry);
 		$rootScope.newEntry = {};
-		alert('Success add new entry xDD');
+		alert('Success add new entry xDD Going to the page xD');
+		$location.path("/all");
 	};
 });
 
