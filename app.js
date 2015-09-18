@@ -1,6 +1,6 @@
 
 var app = angular.module('diaryApp', ['ngRoute']);
- 
+
 app.run(function($rootScope) {
 	$rootScope.selectedMenu = 0;
 	$rootScope.menus = [
@@ -20,9 +20,9 @@ app.run(function($rootScope) {
 			link:'#/category'
 		}
 	];
-	
+
 	$rootScope.entries = [
-		{	
+		{
 			id:1,
 			title:'Sad day',
 			content:'Donno why so sad ~ haiz...'
@@ -39,7 +39,7 @@ app.run(function($rootScope) {
 		}
 	];
 });
- 
+/*
 app.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/', {
         templateUrl: '/views/home.html',
@@ -61,37 +61,61 @@ app.config(['$routeProvider', function($routeProvider) {
         templateUrl: '/views/new_entry.html',
         controller: 'NewEntryController'
       })
-	 
-}]);
- 
- 
+
+}]);*/
+
+app.config(function($routeProvider){
+  $routeProvider
+  .when('/', {
+        templateUrl: '/views/home.html',
+        controller: 'MainController'
+  })
+  .when('/home', {
+        templateUrl: '/views/home.html',
+        controller: 'MainController'
+  })
+  .when('/all', {
+        templateUrl: '/views/all_entry.html',
+        controller: 'AllEntryController'
+  })
+  .when('/category', {
+        templateUrl: '/views/category.html',
+        controller: 'CategoryController'
+  })
+  .when('/new', {
+        templateUrl: '/views/new_entry.html',
+        controller: 'NewEntryController'
+  })
+});
+
+
 app.controller('MainController', function($rootScope,$scope) {
     $rootScope.selectedMenu = 0;
     $scope.message = 'A blog written in AngularJS which is simple, quick and responsive.. xD';
-     
-}); 
- 
+
+});
+
 app.controller('AllEntryController', function($rootScope,$scope) {
     $rootScope.selectedMenu = 1;
     $scope.message = 'This is all entry screen';
-	
+
     $scope.remove = function(entry) {
 		var index = $rootScope.entries.indexOf(entry);
 		$rootScope.entries.splice(index,1);
-		
+
 	};
 });
 
  app.controller('CategoryController', function($rootScope,$scope) {
     $rootScope.selectedMenu = 2;
     $scope.message = 'This is all category';
-     
+
 });
- 
+
 app.controller('NewEntryController', function($rootScope,$scope,$location) {
 	$rootScope.selectedMenu = 3;
     $scope.message = 'This is new entry screen';
- 
+
 	$rootScope.newEntry = {};
 	$scope.addEntry = function() {
 		$rootScope.newEntry.id = $rootScope.entries.length+1;
