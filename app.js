@@ -39,55 +39,30 @@ app.run(function($rootScope) {
 		}
 	];
 });
-/*
-app.config(['$routeProvider', function($routeProvider) {
-	$routeProvider.when('/', {
-        templateUrl: '/views/home.html',
-        controller: 'MainController'
-    })
-    $routeProvider.when('/home', {
-        templateUrl: '/views/home.html',
-        controller: 'MainController'
-    })
-	$routeProvider.when('/all', {
-        templateUrl: '/views/all_entry.html',
-        controller: 'AllEntryController'
-    })
-	$routeProvider.when('/category', {
-        templateUrl: '/views/category.html',
-        controller: 'CategoryController'
-    })
-	$routeProvider.when('/new', {
-        templateUrl: '/views/new_entry.html',
-        controller: 'NewEntryController'
-      })
-
-}]);*/
 
 app.config(function($routeProvider){
   $routeProvider
   .when('/', {
-        templateUrl: '/views/home.html',
+        templateUrl: 'views/home.html',
         controller: 'MainController'
   })
   .when('/home', {
-        templateUrl: '/views/home.html',
+        templateUrl: 'views/home.html',
         controller: 'MainController'
   })
   .when('/all', {
-        templateUrl: '/views/all_entry.html',
+        templateUrl: 'views/all_entry.html',
         controller: 'AllEntryController'
   })
   .when('/category', {
-        templateUrl: '/views/category.html',
+        templateUrl: 'views/category.html',
         controller: 'CategoryController'
   })
   .when('/new', {
-        templateUrl: '/views/new_entry.html',
+        templateUrl: 'views/new_entry.html',
         controller: 'NewEntryController'
   })
 });
-
 
 app.controller('MainController', function($rootScope,$scope) {
     $rootScope.selectedMenu = 0;
